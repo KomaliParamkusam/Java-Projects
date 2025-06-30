@@ -1,0 +1,3 @@
+create table spring_cust_info(custno number primary key,cname varchar2(20),cadd varchar2(25),bill float,discount float,finalamount float);
+create sequence cno_seq start with 101 increment by 6 nocache nocycle;
+select *from spring_cust_info;

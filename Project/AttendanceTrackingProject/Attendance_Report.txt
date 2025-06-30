@@ -1,0 +1,50 @@
+---------Monthly Attendance Report for vedha of ID: 123----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+2025-04-28 | 10:00     | 18:30      | 8 Hours : 30 Minutes
+
+---------Monthly Attendance Report for DEV of (ID: 1001)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+2025-04-29 | 10:00     | 18:00      | 8 Hours : 0 Minutes
+
+---------Monthly Attendance Report for INDHU of (ID: 6001)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+
+---------Monthly Attendance Report for MALLIKA of (ID: 8001)----------
+-----------------------------------------------------Date        | Check-In    | Check-Out    | Hours Worked-----------------------------------------------------2025-04-26 | 08:30     | null      | Null
+
+---------Monthly Attendance Report for RAM of (ID: 2)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+2025-03-25 | 09:30     | 18:00      | 8 Hours : 30 Minutes
+
+---------Monthly Attendance Report for RADHA of (ID: 999)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+2025-03-20 | 08:30     | 14:00      | 5 Hours : 30 Minutes
+2025-03-23 | 09:30     | Not Recorded      | Absent
+
+---------Monthly Attendance Report for KOMALI1 of (ID: 100)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+
+---------Monthly Attendance Report for KOMALI1 of (ID: 100)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+2025-05-02 | 09:00     | 09:30      | 0 Hours : 30 Minutes
+
+---------Monthly Attendance Report for KOMALI2 of (ID: 99)----------
+-----------------------------------------------------
+Date        | Check-In    | Check-Out    | Hours Worked
+-----------------------------------------------------
+2025-05-02 | 09:00     | 08:30      | 0 Hours : -30 Minutes
+

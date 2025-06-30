@@ -1,0 +1,68 @@
+create table empdetails(empid number,empname varchar(25),salary integer);
+insert all into empdetails (empid,empname,salary) values(1046,'Komali',60000)
+            into empdetails (empid,empname,salary) values(1047,'Manisha',50000)
+select *from dual;
+alter table empdetails add(email varchar(30));
+insert into empdetails (email) values('sumanth@gmail.com');
+delete from empdetails where empid=203;
+update empdetails set email='sumanth@gmail.com' where empid=1045;
+insert into empdetails values(1048,'Anusha',70000,'anusha@gmail.com');
+update empdetails set email=case empid when 1046 then 'komali@gmail.com'
+                                        when 1047 then 'manisha@gmail.com' end where empid in(1046,1047);
+update empdetails set salary=80000 where empid=1047;
+alter table empdetails modify salary float;
+ALTER TABLE empdetails ADD CONSTRAINT unique_email UNIQUE (email);
+alter table empdetails add constraint pk_id primary key(empid);
+alter table empdetails modify salary not null;
+savepoint sp1;
+update empdetails set salary=55000 where empid=1046;
+savepoint sp2;
+update empdetails set salary=48000 where empid=1046;
+update empdetails set salary=58000 where empid=1046;
+commit;
+rollback;
+select * from empdetails; 
+select sysdate from dual;
+select *from empdetails fetch first 2 rows only;
+select *from student;
+select *from employees;
+create or replace procedure addEmp(employee_id in number,employee_name in varchar,employee_salary in integer,employee_email in varchar) 
+is 
+begin 
+    insert into empdetails(empid,empname,salary,email) values(employee_id,employee_name,employee_salary,employee_email);
+end addEmp;
+/
+execute addEmp(205,'kriti',65000,'kriti@gmail.com');
+create or replace procedure getSalary(id1 in number ,salary1 out number)
+as 
+begin
+    select salary into salary1 from empdetails where empid=id1;
+    end getSalary;
+/
+variable sal number;
+execute getSalary(205,:sal);
+print sal;
+create or replace procedure getStudentName(stu_grade in varchar2,stu_cursor out sys_refcursor)
+is
+begin 
+    open stu_cursor for
+    select sname from student where grade=stu_grade;
+    exception
+    when others then
+        dbms_output.put_line('An unexpected error occurred: ' || sqlerrm);
+    end getStudentName;
+    
+/
+variable cur refcursor;
+execute getStudentName('G',:cur);
+print cur;
+create or replace function getAvg(id1 in number,id2 in number)return number 
+as 
+mark1 number;
+mark2 number;
+begin
+    select marks into mark1 from student where sid=id1;
+    select marks into mark2 from student where sid=id2;
+    return (mark1+mark2)/2;
+end;
+/
