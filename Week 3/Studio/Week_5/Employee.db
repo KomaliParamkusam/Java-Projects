@@ -1,0 +1,23 @@
+create table empdetails(empid number,empname varchar(25),salary integer);
+insert all into empdetails (empid,empname,salary) values(1046,'Komali',60000)
+            into empdetails (empid,empname,salary) values(1047,'Manisha',50000)
+select *from dual;
+alter table empdetails add(email varchar(30));
+insert into empdetails (email) values('sumanth@gmail.com');
+delete from empdetails where email='sumanth@gmail.com';
+update empdetails set email='sumanth@gmail.com' where empid=1045;
+insert into empdetails values(1048,'Anusha',70000,'anusha@gmail.com');
+update empdetails set email=case empid when 1046 then 'komali@gmail.com'
+                                        when 1047 then 'manisha@gmail.com' end where empid in(1046,1047);
+update empdetails set salary=80000 where empid=1047;
+alter table empdetails modify empname not null;
+ALTER TABLE empdetails ADD CONSTRAINT unique_email UNIQUE (email);
+alter table empdetails add constraint pk_id primary key(empid);
+alter table empdetails modify salary not null;
+savepoint sp1;
+update empdetails set salary=50000 where empid=1046;
+savepoint sp2;
+update empdetails set salary=40000 where empid=1046;
+commit;
+rollback to sp1;
+select * from empdetails; 
