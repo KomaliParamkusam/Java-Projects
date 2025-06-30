@@ -1,0 +1,7 @@
+.metadata/
+.sonarlint/
+Servers/
+*.log
+*.class
+target/
+build/
